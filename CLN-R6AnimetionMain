@@ -1,7 +1,23 @@
 -- Universal R6 animation
-
--- Emote 
-loadstring(game:HttpGet("https://raw.githubusercontent.com/YourRealjohn/R6-Animation/refs/heads/main/The3Emote"))()
-
--- animation 
+-- The R6 animation
 loadstring(game:HttpGet("https://raw.githubusercontent.com/YourRealjohn/R6-Animation/refs/heads/main/R6-ANIMATION"))()
+
+for i = 6, 1, -1 do
+    game.StarterGui:SetCore("SendNotification", {
+        Title = "Countdown",
+        Text = "Executing in " .. i .. " second(s)",
+        Duration = 1
+    })
+    task.wait(1)
+end
+
+game.StarterGui:SetCore("SendNotification", {
+    Title = "Good luck",
+    Text = "Enjoy the script now buddy",
+    Duration = 5
+})
+
+task.wait(1)
+
+-- The Emote
+loadstring(game:HttpGet("https://raw.githubusercontent.com/YourRealjohn/R6-Animation/refs/heads/main/The3Emote"))()
