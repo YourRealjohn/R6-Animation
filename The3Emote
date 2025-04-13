@@ -107,19 +107,27 @@ tool.Parent = player.Backpack
 
 -- Animation
 local laughAnim = Instance.new("Animation")
-laughAnim.AnimationId = "rbxassetid://129423131" -- Placeholder, replace with laugh anim ID if available
+laughAnim.AnimationId = "rbxassetid://129423131"
 local laughTrack = humanoid:LoadAnimation(laughAnim)
 
 -- Store default WalkSpeed
 local defaultWalkSpeed = humanoid.WalkSpeed
 
--- Equip logic
+-- Loop control
+local isEquipped = false
+
 tool.Equipped:Connect(function()
+    isEquipped = true
     humanoid.WalkSpeed = 5
-    laughTrack:Play()
+
+    while isEquipped do
+        laughTrack:Play()
+        task.wait(laughTrack.Length)
+    end
 end)
 
 tool.Unequipped:Connect(function()
+    isEquipped = false
     humanoid.WalkSpeed = defaultWalkSpeed
     laughTrack:Stop()
 end)
