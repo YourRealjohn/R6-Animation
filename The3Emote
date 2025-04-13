@@ -1,0 +1,125 @@
+--// Crouch Animation & Tool Setup
+local player = game.Players.LocalPlayer
+local character = player.Character or player.CharacterAdded:Wait()
+local humanoid = character:WaitForChild("Humanoid")
+
+-- Remove existing "Crouch" tool if already exists
+for _, v in pairs(player.Backpack:GetChildren()) do
+    if v:IsA("Tool") and v.Name == "Crouch" then
+        v:Destroy()
+    end
+end
+for _, v in pairs(character:GetChildren()) do
+    if v:IsA("Tool") and v.Name == "Crouch" then
+        v:Destroy()
+    end
+end
+
+-- Create Tool
+local tool = Instance.new("Tool")
+tool.RequiresHandle = false
+tool.Name = "Crouch"
+tool.Parent = player.Backpack
+
+-- Animation
+local crouchAnim = Instance.new("Animation")
+crouchAnim.AnimationId = "rbxassetid://287325678"
+local crouchTrack = humanoid:LoadAnimation(crouchAnim)
+
+-- Store default WalkSpeed
+local defaultWalkSpeed = humanoid.WalkSpeed
+
+-- Equip logic
+tool.Equipped:Connect(function()
+    humanoid.WalkSpeed = 3
+    crouchTrack:Play()
+end)
+
+tool.Unequipped:Connect(function()
+    humanoid.WalkSpeed = defaultWalkSpeed
+    crouchTrack:Stop()
+end)
+
+--// Dance1 Animation & Tool Setup
+local player = game.Players.LocalPlayer
+local character = player.Character or player.CharacterAdded:Wait()
+local humanoid = character:WaitForChild("Humanoid")
+
+-- Remove existing "Celebrating Dance" tool if it already exists
+for _, v in pairs(player.Backpack:GetChildren()) do
+    if v:IsA("Tool") and v.Name == "Celebrating Dance" then
+        v:Destroy()
+    end
+end
+for _, v in pairs(character:GetChildren()) do
+    if v:IsA("Tool") and v.Name == "Celebrating Dance" then
+        v:Destroy()
+    end
+end
+
+-- Create Tool
+local tool = Instance.new("Tool")
+tool.RequiresHandle = false
+tool.Name = "Celebrating Dance"
+tool.Parent = player.Backpack
+
+-- Animation
+local crouchAnim = Instance.new("Animation")
+crouchAnim.AnimationId = "rbxassetid://248263260"
+local crouchTrack = humanoid:LoadAnimation(crouchAnim)
+
+-- Store default WalkSpeed
+local defaultWalkSpeed = humanoid.WalkSpeed
+
+-- Equip logic
+tool.Equipped:Connect(function()
+    humanoid.WalkSpeed = 3
+    crouchTrack:Play()
+end)
+
+tool.Unequipped:Connect(function()
+    humanoid.WalkSpeed = defaultWalkSpeed
+    crouchTrack:Stop()
+end)
+
+--// Laugh Animation & Tool Setup
+local player = game.Players.LocalPlayer
+local character = player.Character or player.CharacterAdded:Wait()
+local humanoid = character:WaitForChild("Humanoid")
+
+-- Remove existing "Laugh" tool if it already exists
+for _, v in pairs(player.Backpack:GetChildren()) do
+    if v:IsA("Tool") and v.Name == "Laugh" then
+        v:Destroy()
+    end
+end
+for _, v in pairs(character:GetChildren()) do
+    if v:IsA("Tool") and v.Name == "Laugh" then
+        v:Destroy()
+    end
+end
+
+-- Create Tool
+local tool = Instance.new("Tool")
+tool.RequiresHandle = false
+tool.Name = "Laugh"
+tool.Parent = player.Backpack
+
+-- Animation
+local laughAnim = Instance.new("Animation")
+laughAnim.AnimationId = "rbxassetid://129423131" -- Placeholder, replace with laugh anim ID if available
+local laughTrack = humanoid:LoadAnimation(laughAnim)
+
+-- Store default WalkSpeed
+local defaultWalkSpeed = humanoid.WalkSpeed
+
+-- Equip logic
+tool.Equipped:Connect(function()
+    humanoid.WalkSpeed = 5
+    laughTrack:Play()
+end)
+
+tool.Unequipped:Connect(function()
+    humanoid.WalkSpeed = defaultWalkSpeed
+    laughTrack:Stop()
+end)
