@@ -1,1 +1,7 @@
+-- Universal R6 animation
 
+-- Emote 
+loadstring(game:HttpGet("https://raw.githubusercontent.com/YourRealjohn/R6-Animation/refs/heads/main/The3Emote"))()
+
+-- animation 
+loadstring(game:HttpGet("https://raw.githubusercontent.com/YourRealjohn/R6-Animation/refs/heads/main/R6-ANIMATION"))()
