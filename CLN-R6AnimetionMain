@@ -598,28 +598,65 @@
 -- NO SKID
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 -- OPEN SOURCE
 -- Universal R6 animation
 loadstring(game:HttpGet("https://raw.githubusercontent.com/YourRealjohn/R6-Animation/refs/heads/main/R6-ANIMATION"))()
 
 -- Countdown before executing the emote script
 for i = 6, 1, -1 do
-    game.StarterGui:SetCore("SendNotification", {
-        Title = "Countdown",
-        Text = "Executing in " .. i .. " second(s)",
-        Duration = 1
-    })
-    task.wait(1)
+game.StarterGui:SetCore("SendNotification", {
+Title = "Countdown",
+Text = "Executing in " .. i .. " second(s)",
+Duration = 3
+})
+task.wait(1)
 end
 
 -- Final message before execution
 game.StarterGui:SetCore("SendNotification", {
-    Title = "Good luck",
-    Text = "Enjoy the script now buddy",
-    Duration = 5
+Title = "Good luck",
+Text = "Enjoy the script now buddy",
+Duration = 5
 })
 
 task.wait(1)
 
 -- The Emote
 loadstring(game:HttpGet("https://raw.githubusercontent.com/YourRealjohn/R6-Animation/refs/heads/main/The3Emote"))()
+
+-- Notify every 15 minutes
+while true do
+task.wait(900) -- 15 minutes in seconds
+game.StarterGui:SetCore("SendNotification", {
+Title = "Reminder",
+Text = "The R6 Animation is still running smoothly!",
+Duration = 5
+})
+print("Reminder: (⁠≧⁠▽⁠≦⁠) The R6 Animation is still running.")
+end
